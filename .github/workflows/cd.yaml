@@ -25,7 +25,7 @@ jobs:
           password: ${{ env.DOCKERHUB_PASSWORD }}
 
       - name: Build Docker image
-        run: docker build -t ${{ env.DOCKERHUB_USERNAME }}/${{ env.IMAGE_NAME }}:${{ github.sha }} -f ./Docker/Dockerfile .
+        run: docker build -t ${{ env.DOCKERHUB_USERNAME }}/${{ env.IMAGE_NAME }}:${{ github.sha }} -f ./Docker/Dockerfile ./Docker
 
       - name: Push Docker image
         run: docker push ${{ env.DOCKERHUB_USERNAME }}/${{ env.IMAGE_NAME }}:${{ github.sha }}
@@ -38,4 +38,3 @@ jobs:
           git add ./Kubernetes/deployment.yaml
           git commit -m "Update deployment.yaml with new image tag"
           git push
-
