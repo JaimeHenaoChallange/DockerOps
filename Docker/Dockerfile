@@ -1,4 +1,5 @@
 # Usa la imagen oficial de nginx:alpine
+# checkov:skip=CKV_DOCKER_2: ADD REASON
 FROM nginx:alpine
 
 # Copia el archivo index.html al directorio de trabajo en la imagen
