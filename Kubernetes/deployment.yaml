@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
       - name: hw-container
-        image: httpd
+        image: jaimehenao8126/kantox-skill:10
 
         ports:
         - containerPort: 80
